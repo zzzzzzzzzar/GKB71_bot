@@ -35,7 +35,7 @@ def get_text_messages(message):
 
     elif message.text == 'Подключиться к Wi-Fi':
         bot.send_message(message.from_user.id, 'В нашей больнице вы всегда можете воспользоваться быстрым и стабильным подключением к интернет.\n \nПодробная инструкция: ') 
-        bot.send_document(message.from_user.id,f,"public_Wi-Fi.pdf")
+        bot.send_document(message.chat.id, public_Wi-Fi.pdf,)
  
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
