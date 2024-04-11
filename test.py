@@ -19,7 +19,8 @@ def get_text_messages(message):
         btn1 = types.KeyboardButton('Где приемное отделение?')
         btn2 = types.KeyboardButton('Где покурить?')
         btn3 = types.KeyboardButton('Часы посещений')
-        markup.add(btn1, btn2, btn3)
+        btn4 = types.KeyboardButton('Подключиться к Wi-Fi')
+        markup.add(btn1, btn2, btn3, btn4)
         bot.send_message(message.from_user.id, '❓ Задайте интересующий вас вопрос', reply_markup=markup) #ответ бота
 
 
@@ -31,6 +32,9 @@ def get_text_messages(message):
 
     elif message.text == 'Часы посещений':
         bot.send_message(message.from_user.id, 'К сожалнию из за сложной санитарно-эпидемиологической обстановки в Москве посещение пациентов, пока, запрещено.\n \nПодробности можно прочитать по ' + '[ссылке](https://gb71.ru/news/izmenen-poryadok-dopuska-posetiteley-k-patsientam_2)', parse_mode='Markdown')
+
+    elif message.text == 'Подключиться к Wi-Fi':
+        bot.send_message(message.from_user.id, 'В нашей больнице вы всегда можете воспользоваться быстрым и стабильным подключением к интернет.\n \nПодробная инструкция: ,f,"public_Wi-Fi.pdf"')
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
