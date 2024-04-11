@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('7095217128:AAE0YnvTNRoQiXNqgjBRJ20j2HJnSP9sKL0')
+bot = telebot.TeleBot('7095217128:AAFc_-5FPzWBUdGi2ILdUdKYVVB0Zmm1qjU')
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -20,7 +20,8 @@ def get_text_messages(message):
         btn2 = types.KeyboardButton('Где покурить?')
         btn3 = types.KeyboardButton('Часы посещений')
         btn4 = types.KeyboardButton('Подключиться к Wi-Fi')
-        markup.add(btn1, btn2, btn3, btn4)
+        btn4 = types.KeyboardButton('Где поесть?')
+        markup.add(btn1, btn2, btn3, btn4, btn5)
         bot.send_message(message.from_user.id, '❓ Задайте интересующий вас вопрос', reply_markup=markup) #ответ бота
 
 
@@ -40,5 +41,9 @@ def get_text_messages(message):
         f = open("public.pdf","rb")
         bot.send_document(message.chat.id,f)
  
+    elif message.text == 'Где поесть?':
+        bot.send_message(message.from_user.id, 'На первом этаже корпусов №1 и №7, а также на 2 этаже корпуса №2 вы можете найти богато наполненые венденговые автоматы, если же вы хотите выпить горячий кофе приготовленный на професиональной кофеварочной машине - посетите кафе расположенное на первом этаже корпуса №4.\n \n Желаю приятного аппетита!')
+        Photo_2 = open("coffee.jpg","rb")
+        bot.send_photo(message.chat.id,Photo_2)
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
