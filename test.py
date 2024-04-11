@@ -18,7 +18,7 @@ def get_text_messages(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True) #создание новых кнопок
         btn1 = types.KeyboardButton('Где приемное отделение?')
         btn2 = types.KeyboardButton('Где покурить?')
-        btn3 = types.KeyboardButton('Часы посещения')
+        btn3 = types.KeyboardButton('Часы посещений')
         markup.add(btn1, btn2, btn3)
         bot.send_message(message.from_user.id, '❓ Задайте интересующий вас вопрос', reply_markup=markup) #ответ бота
 
@@ -28,8 +28,9 @@ def get_text_messages(message):
 
     elif message.text == 'Где покурить?':
         bot.send_message(message.from_user.id, 'Согласно Закону N 15-ФЗ курение табака запрещено на территориях и в помещениях, предназначенных для оказания медицинских услуг, а также на рабочих местах и в рабочих зонах, организованных в помещениях. Но вы всегда можете выйти за территорию и предаться саморазрушению :)' )
-    elif message.text == 'Часы посещения':
-        bot.send_message(message.from_user.id, 'К сожалнию из за сложной санитарно-эпидемиологической обстановки в Москве посещение пациентов, пока, запрещено.')
+        
+    elif message.text == 'Часы посещений':
+        bot.send_message(message.from_user.id, 'К сожалнию из за сложной санитарно-эпидемиологической обстановки в Москве посещение пациентов, пока, запрещено.\n \nПодробности можно прочитать по ' + '[ссылке](https://gb71.ru/news/izmenen-poryadok-dopuska-posetiteley-k-patsientam_2)', parse_mode='Markdown')
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
