@@ -24,13 +24,12 @@ def get_text_messages(message):
 
 
     elif message.text == 'Где приемное отделение?':
-        bot.send_message(message.from_user.id, 'Вам необходимо пройти через проходную 1 корпуса, пересечь небольшой сквер и подойти к торцу корпуса №7 .\n \nСему можно посмотреть по ' + '[ссылке](https://ibb.co/CnxKvPd)', parse_mode='Markdown')
+        bot.send_message(message.from_user.id, 'Вам необходимо пройти через проходную корпуса №1, пересечь небольшой сквер и подойти к торцу корпуса №7 .\n \nСему можно посмотреть по ' + '[ссылке](https://ibb.co/CnxKvPd)', parse_mode='Markdown')
 
-    elif message.text == 'Правила сайта':
-        bot.send_message(message.from_user.id, 'Прочитать правила сайта вы можете по ' + '[ссылке](https://habr.com/ru/docs/help/rules/)', parse_mode='Markdown')
-
-    elif message.text == 'Советы по оформлению публикации':
-        bot.send_message(message.from_user.id, 'Подробно про советы по оформлению публикаций прочитать по ' + '[ссылке](https://habr.com/ru/docs/companies/design/)', parse_mode='Markdown')
+    elif message.text == 'Где покурить?':
+        bot.send_message(message.from_user.id, 'Согласно Закону N 15-ФЗ курение табака запрещено на территориях и в помещениях, предназначенных для оказания медицинских услуг, а также на рабочих местах и в рабочих зонах, организованных в помещениях. Но вы всегда можете выйти за территорию и предаться саморазрушению :)' )
+    elif message.text == 'Часы посещения':
+        bot.send_message(message.from_user.id, 'К сожалнию из за сложной санитарно-эпидемиологической обстановки в Москве посещение пациентов, пока, запрещено.\n \nПодробности можно прочитать по ' + '[ссылке](https://gb71.ru/news/izmenen-poryadok-dopuska-posetiteley-k-patsientam_2/)', parse_mode='Markdown')
 
 
 bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
