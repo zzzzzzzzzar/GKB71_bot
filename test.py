@@ -23,7 +23,8 @@ def get_text_messages(message):
         btn3 = types.KeyboardButton('Часы посещений')
         btn4 = types.KeyboardButton('Подключиться к Wi-Fi')
         btn5 = types.KeyboardButton('Где поесть?')
-        markup.add(btn1, btn2, btn3, btn4, btn5)
+        btn6 = types.KeyboardButton('Тест?')
+        markup.add(btn1, btn2, btn3, btn4, btn5, btn6)
         bot.send_message(message.from_user.id, '❓ Задайте интересующий вас вопрос', reply_markup=markup) #ответ бота
 
 
