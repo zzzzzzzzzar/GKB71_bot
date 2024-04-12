@@ -49,4 +49,4 @@ def get_text_messages(message):
         Photo_2 = open("coffee.png","rb")
         bot.send_photo(message.chat.id,Photo_2)
 
-bot.polling(none_stop=True, interval=0) #обязательная для работы бота часть
+bot.infinity_polling(timeout=10, long_polling_timeout = 5) #обязательная для работы бота часть
